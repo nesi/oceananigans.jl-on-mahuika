@@ -17,6 +17,6 @@ module load CUDA/12.6.3
 nvidia-smi --query-gpu=timestamp,utilization.gpu,utilization.memory,memory.used,memory.total \
     --format=csv,nounits -l 5 > "gpustats-${SLURM_JOB_ID}.csv" &
 
-julia --threads ${SLURM_CPUS_PER_TASK}  ../scripts-serial/sebaroclinic_adjustment.jl
+julia --threads ${SLURM_CPUS_PER_TASK}  ../scripts-serial/baroclinic_adjustment.jl
 
 
